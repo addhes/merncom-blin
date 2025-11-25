@@ -5,6 +5,7 @@ import connectDB from './config/connectDB.js';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import userRouter from './routes/userRoute.js';
 
 // import authRoutes from './routes/authRoutes.js';
 // import userRoutes from './routes/userRoutes.js';
@@ -39,4 +40,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.use('/api/user', userRouter);
 
