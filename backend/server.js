@@ -29,17 +29,12 @@ connectDB();
 // app.use('/api/users', userRoutes);
 // app.use('/api/posts', postRoutes);
 
-app.get('/', (req, res) => {
-
-    res.json({ message: 'API is running...' });
-
-    res.send('API is running...');
-});
+app.use('/api/user', userRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
 
-app.use('/api/user', userRouter);
+
 

@@ -1,6 +1,7 @@
 // utils/emailTemplates.js
 
 export const welcomeEmailTemplate = (user) => {
+  const { name, email, url, date } = user;
   return `
     <!DOCTYPE html>
     <html>
